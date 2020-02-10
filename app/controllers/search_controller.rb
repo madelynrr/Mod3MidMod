@@ -4,7 +4,7 @@ class SearchController < ApplicationController
     house = params[:house]
 
     conn = Faraday.new(url: "https://www.potterapi.com/v1/") do |faraday|
-      faraday.params = {key: "$2a$10$KRdHUDF24DWSKgeUDE/Pk.Io8huQ2pblRm2Sl956HH9Sjf1pdwCEW",
+      faraday.params = {key: ENV['HARRY_POTTER_KEY'],
                         house: "#{house}",
                         orderOfThePhoenix: true}
       faraday.adapter Faraday.default_adapter
