@@ -9,6 +9,10 @@ class OrderByHouseSearch
   end
 
   def members
+    # service = PotterService.new
+    # service.members_by_house(house).map do |member_data|
+    #   Character.new(member_data)
+    # end
     conn = Faraday.new(url: "https://www.potterapi.com/v1/") do |faraday|
       faraday.params = {key: ENV['HARRY_POTTER_KEY'],
                         house: @house,
