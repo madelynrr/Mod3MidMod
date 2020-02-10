@@ -18,9 +18,9 @@ class OrderByHouseSearch
 
     response = conn.get("characters")
 
-    json = JSON.parse(response.body, symbolize_names: true)
+    member_data = JSON.parse(response.body, symbolize_names: true)
 
-    @members = json.map do |member|
+    @members = member_data.map do |member|
       Character.new(member)
     end
   end
