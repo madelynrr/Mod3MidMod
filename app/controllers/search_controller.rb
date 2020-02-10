@@ -4,9 +4,6 @@ class SearchController < ApplicationController
     render locals: {
       search_results: OrderByHouseSearch.new(params[:house])
     }
-    # house = params[:house]
-    #
-    
   end
 
 end
