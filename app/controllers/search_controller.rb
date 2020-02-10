@@ -12,7 +12,11 @@ class SearchController < ApplicationController
 
     response = conn.get("characters")
 
-    @members = JSON.parse(response.body, symbolize_names: true)
+    json = JSON.parse(response.body, symbolize_names: true)
+
+    @members = json.map do |member|
+      Character.new(member)
+    end
 
 
 
